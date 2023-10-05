@@ -181,3 +181,24 @@ sudoku.c:61:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 cd88506
+Thu 05 Oct 2023 07:24:51 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:53:23: error: ‘sudo’ undeclared (first use in this function)
+   53 |               int a = sudo[i+1][j]
+      |                       ^~~~
+sudoku.c:53:23: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:54:15: error: expected ‘,’ or ‘;’ before ‘if’
+   54 |               if (a = sudo[i][j])
+      |               ^~
+sudoku.c:53:19: error: unused variable ‘a’ [-Werror=unused-variable]
+   53 |               int a = sudo[i+1][j]
+      |                   ^
+sudoku.c:61:1: error: control reaches end of non-void function [-Werror=return-type]
+   61 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1c2a1ec
