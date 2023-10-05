@@ -46,16 +46,8 @@ void print_node(Node* n){
 int is_valid(Node* n){
 
     {
-for (int a = 0; a < i; i++)
-{
-if (n->reinas[a] == j || abs(n->reinas[a] - j) == abs(a - i))
-{
-return true;
-}
-}
-return false;
-}
-}
+      
+    }
 
 
 List* get_adj_nodes(Node* n){
