@@ -46,9 +46,9 @@ void print_node(Node* n){
 int is_valid(Node* n){
 
     {
-for (int i = 0; i < fila; i++)
+for (int a = 0; a < i; i++)
 {
-if (n->reinas[i] == columna || abs(node->reinas[i] - columna) == abs(i - fila))
+if (n->reinas[a] == j || abs(node->reinas[a] - j) == abs(a - i))
 {
 return true;
 }
