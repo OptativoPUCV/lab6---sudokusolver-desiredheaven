@@ -68,13 +68,10 @@ List* get_adj_nodes(Node* n){
         for (j = 0; j < 9; j++) {
             if (n->sudo[i][j] == 0) {
                 for (int k = 1; k <= 9; k++) {
-                    // Temporarily assign k to the cell
                     n->sudo[i][j] = k;
                     
-                    // Create a copy and add it to the list
-                    pushBack(list, copy(n));
+                    pushFront(list, copy(n));
                     
-                    // Reset the cell back to 0 for the next iteration
                     n->sudo[i][j] = 0;
                 }
                 return list;
