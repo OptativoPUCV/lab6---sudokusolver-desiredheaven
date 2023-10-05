@@ -293,3 +293,8 @@ sudoku.c:67:10: error: unused variable ‘x’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 5e47f06
+Thu 05 Oct 2023 07:40:38 PM UTC: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  0|0
+1980e11
