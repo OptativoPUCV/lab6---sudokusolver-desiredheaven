@@ -130,3 +130,30 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 62712dd
+Thu 05 Oct 2023 07:24:22 PM UTC: 
+ sudoku.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:51:16: error: ‘j’ undeclared (first use in this function)
+   51 |           for (j =0; j<0; i++)
+      |                ^
+sudoku.c:51:16: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:53:15: error: ‘a’ undeclared (first use in this function)
+   53 |               a = sudo[i+1][j]
+      |               ^
+sudoku.c:53:19: error: ‘sudo’ undeclared (first use in this function)
+   53 |               a = sudo[i+1][j]
+      |                   ^~~~
+sudoku.c:53:31: error: expected ‘;’ before ‘if’
+   53 |               a = sudo[i+1][j]
+      |                               ^
+      |                               ;
+   54 |               if (a = sudo[i][j])
+      |               ~~               
+sudoku.c:61:1: error: control reaches end of non-void function [-Werror=return-type]
+   61 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1d20940

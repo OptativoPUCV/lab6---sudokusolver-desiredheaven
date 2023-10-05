@@ -45,9 +45,20 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
-    {
-      
-    }
+    
+      for (int i = 0; i<9; i++)
+        {
+          for (j =0; j<0; i++)
+            {
+              a = sudo[i+1][j]
+              if (a = sudo[i][j])
+              {
+                return false;
+              }
+            }
+        }
+        
+}
 
 
 List* get_adj_nodes(Node* n){
