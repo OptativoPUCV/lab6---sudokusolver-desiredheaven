@@ -53,7 +53,7 @@ int is_valid(Node* n){
               int a = sudo[i+1][j];
               if (a = sudo[i][j])
               {
-                return false;
+                return 0;
               }
             }
         }
