@@ -245,3 +245,17 @@ sudoku.c:61:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 920e673
+Thu 05 Oct 2023 07:26:54 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:54:19: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   54 |               if (a = n->sudo[i][j])
+      |                   ^
+sudoku.c:61:1: error: control reaches end of non-void function [-Werror=return-type]
+   61 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+818db61

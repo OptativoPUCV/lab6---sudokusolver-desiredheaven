@@ -50,8 +50,8 @@ int is_valid(Node* n){
         {
           for (int j =0; j<0; i++)
             {
-              int a = sudo[i+1][j];
-              if (a = sudo[i][j])
+              int a = n->sudo[i+1][j];
+              if (a = n->sudo[i][j])
               {
                 return 0;
               }
