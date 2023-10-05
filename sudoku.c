@@ -70,7 +70,7 @@ List* get_adj_nodes(Node* n){
                 for (int k = 1; k <= 9; k++) {
                     n->sudo[i][j] = k;
                     Node* aux = copy(n);
-                    pushFront(list, aux);
+                    pushBack(list, aux);
                     
                     n->sudo[i][j] = 0;
                 }
