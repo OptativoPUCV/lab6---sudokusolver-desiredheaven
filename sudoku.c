@@ -75,10 +75,11 @@ List* get_adj_nodes(Node* n){
                   n->sudo[i][j] = k;
                   pushFront(list, n);
                 }
+              return list;
             }
           }
       }
-    return list;
+    return NULL;
 }
 
 
