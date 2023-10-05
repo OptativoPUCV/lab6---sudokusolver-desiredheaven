@@ -45,7 +45,16 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
-    return 1;
+    {
+for (int i = 0; i < fila; i++)
+{
+if (n->reinas[i] == columna || abs(node->reinas[i] - columna) == abs(i - fila))
+{
+return true;
+}
+}
+return false;
+}
 }
 
 

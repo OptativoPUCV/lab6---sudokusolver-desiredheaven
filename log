@@ -2,3 +2,39 @@ Thu 05 Oct 2023 07:01:53 PM UTC:
  tests:  0|5
 total_score: 0/70
 15c3af0
+Thu 05 Oct 2023 07:07:15 PM UTC: 
+ sudoku.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:49:21: error: ‘fila’ undeclared (first use in this function)
+   49 | for (int i = 0; i < fila; i++)
+      |                     ^~~~
+sudoku.c:49:21: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:51:6: error: ‘Node’ has no member named ‘reinas’
+   51 | if (n->reinas[i] == columna || abs(node->reinas[i] - columna) == abs(i - fila))
+      |      ^~
+sudoku.c:51:21: error: ‘columna’ undeclared (first use in this function)
+   51 | if (n->reinas[i] == columna || abs(node->reinas[i] - columna) == abs(i - fila))
+      |                     ^~~~~~~
+sudoku.c:51:36: error: ‘node’ undeclared (first use in this function); did you mean ‘Node’?
+   51 | if (n->reinas[i] == columna || abs(node->reinas[i] - columna) == abs(i - fila))
+      |                                    ^~~~
+      |                                    Node
+sudoku.c:53:8: error: ‘true’ undeclared (first use in this function)
+   53 | return true;
+      |        ^~~~
+sudoku.c:4:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    3 | #include "list.h"
+  +++ |+#include <stdbool.h>
+    4 | 
+sudoku.c:56:8: error: ‘false’ undeclared (first use in this function)
+   56 | return false;
+      |        ^~~~~
+sudoku.c:56:8: note: ‘false’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+sudoku.c:58:1: error: control reaches end of non-void function [-Werror=return-type]
+   58 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+2a93bc1
