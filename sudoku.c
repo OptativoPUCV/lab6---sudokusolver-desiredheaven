@@ -155,7 +155,13 @@ Node* DFS(Node* initial, int* cont){
       if (is_final(current))
       {
         destroyStack(stack);
+        return current;
       }
+      List* adj_nodes = get_adj_nodes(current);
+      Node* adj_node = getFirst(adj_nodes);
+      while (adj_node != NULL) {
+            push(stack, adj_node);
+            adj_node = getNext(adj_nodes);
     }
 }
 

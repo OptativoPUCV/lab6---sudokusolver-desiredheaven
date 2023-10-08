@@ -611,3 +611,45 @@ sudoku.c:160:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 fe5fdf0
+Sun 08 Oct 2023 11:51:02 PM UTC: 
+ sudoku.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:148:15: error: ‘n’ undeclared (first use in this function)
+  148 |   push(stack, n);
+      |               ^
+sudoku.c:148:15: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:152:23: error: void value not ignored as it ought to be
+  152 |       Node* current = pop(stack);
+      |                       ^~~
+sudoku.c:157:9: error: implicit declaration of function ‘destroyStack’ [-Werror=implicit-function-declaration]
+  157 |         destroyStack(stack);
+      |         ^~~~~~~~~~~~
+sudoku.c:161:24: error: implicit declaration of function ‘getFirst’ [-Werror=implicit-function-declaration]
+  161 |       Node* adj_node = getFirst(adj_nodes);
+      |                        ^~~~~~~~
+sudoku.c:161:24: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:164:24: error: implicit declaration of function ‘getNext’ [-Werror=implicit-function-declaration]
+  164 |             adj_node = getNext(adj_nodes);
+      |                        ^~~~~~~
+sudoku.c:164:22: error: assignment to ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 |             adj_node = getNext(adj_nodes);
+      |                      ^
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bda398e
