@@ -151,6 +151,11 @@ Node* DFS(Node* initial, int* cont){
     {
       Node* current = pop(stack);
       (*cont)++;
+
+      if (is_final(current))
+      {
+        destroyStack(stack)
+      }
     }
 }
 
