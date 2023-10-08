@@ -461,3 +461,28 @@ Sun 08 Oct 2023 11:35:46 PM UTC:
  tests:  5|3
 total_score: 35/70
 293e62c
+Sun 08 Oct 2023 11:36:44 PM UTC: 
+ sudoku.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:92:11: error: ‘val’ undeclared (first use in this function)
+   92 |       if (val != 0) {
+      |           ^~~
+sudoku.c:92:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:89:11: error: unused variable ‘j’ [-Werror=unused-variable]
+   89 |       int j = 3 * (k % 3) + (p % 3);
+      |           ^
+sudoku.c:88:11: error: unused variable ‘i’ [-Werror=unused-variable]
+   88 |       int i = 3 * (k / 3) + (p / 3);
+      |           ^
+sudoku.c:85:9: error: variable ‘cont’ set but not used [-Werror=unused-but-set-variable]
+   85 |     int cont[10] = {0};
+      |         ^~~~
+sudoku.c: At top level:
+sudoku.c:104:1: error: expected identifier or ‘(’ before ‘}’ token
+  104 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+0aa438e
