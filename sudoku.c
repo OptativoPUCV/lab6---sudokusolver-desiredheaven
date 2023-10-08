@@ -103,7 +103,7 @@ int val = n->sudo[i][j];
 
   return 1;  
 }
-}
+
 List* get_adj_nodes(Node* n){
     List* list = createList();
     int i, j;
