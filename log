@@ -421,3 +421,14 @@ sudoku.c:69:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 4674af4
+Sun 08 Oct 2023 11:24:31 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:69:1: error: control reaches end of non-void function [-Werror=return-type]
+   69 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+64f1320
