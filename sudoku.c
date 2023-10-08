@@ -88,7 +88,9 @@ int is_valid(Node* n){
       int i = 3 * (k / 3) + (p / 3);
       int j = 3 * (k % 3) + (p % 3);
       
-
+      
+      
+int val = n->sudo[i][j];
       if (val != 0) {
         if (cont[val] == 0) {
           cont[val] = 1;
