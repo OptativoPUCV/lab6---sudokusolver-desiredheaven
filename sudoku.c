@@ -48,18 +48,25 @@ int is_valid(Node* n){
     
       for (int i = 0; i<9; i++)
         {
+          int cont[10] = {0}
+          
           for (int j =0; j<9; j++)
             {
-              int a = n->sudo[i+1][j];
-              if (a == n->sudo[i][j])
+              int val = n->sudo[i][j];
+              if (val != 0)
               {
-                return 0;
-              }
+               if (cont[val] == 0) 
+               {
+                cont[val] = 1;
+               }
+                else 
+               {
+                 return 0;
+               }
             }
         }
-    return 1;
 }
-
+}
 List* get_adj_nodes(Node* n){
     List* list = createList();
     int i, j;

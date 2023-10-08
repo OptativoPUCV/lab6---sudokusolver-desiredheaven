@@ -398,3 +398,26 @@ Sun 08 Oct 2023 11:00:43 PM UTC:
  tests:  2|4
 total_score: 15/70
 9b3b812
+Sun 08 Oct 2023 11:23:55 PM UTC: 
+ sudoku.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:53:11: error: expected ‘,’ or ‘;’ before ‘for’
+   53 |           for (int j =0; j<9; j++)
+      |           ^~~
+sudoku.c:53:26: error: ‘j’ undeclared (first use in this function)
+   53 |           for (int j =0; j<9; j++)
+      |                          ^
+sudoku.c:53:26: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:53:34: error: expected ‘;’ before ‘)’ token
+   53 |           for (int j =0; j<9; j++)
+      |                                  ^
+      |                                  ;
+sudoku.c:53:34: error: expected statement before ‘)’ token
+sudoku.c:69:1: error: control reaches end of non-void function [-Werror=return-type]
+   69 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+4674af4
