@@ -144,7 +144,14 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  return NULL;
+  Stack* stack = createStack();
+  push(stack, n);
+
+  while (!is_empty(stack))
+    {
+      Node* current = pop(stack);
+      (*)
+    }
 }
 
 
