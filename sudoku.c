@@ -154,7 +154,7 @@ Node* DFS(Node* initial, int* cont){
 
       if (is_final(current))
       {
-        destroyStack(stack)
+        destroyStack(stack);
       }
     }
 }
