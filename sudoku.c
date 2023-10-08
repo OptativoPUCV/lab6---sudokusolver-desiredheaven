@@ -162,6 +162,14 @@ Node* DFS(Node* initial, int* cont){
       while (adj_node != NULL) {
             push(stack, adj_node);
             adj_node = getNext(adj_nodes);
+            }
+
+
+        free(current);
+    }
+
+    destroyStack(stack);
+    return NULL;
     }
 }
 
