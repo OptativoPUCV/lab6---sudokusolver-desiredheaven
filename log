@@ -751,3 +751,19 @@ sudoku.c:169:11: error: assignment to ‘Node *’ from ‘int’ makes pointer 
 cc1: all warnings being treated as errors
 Compilation failed
 e77c4ec
+Mon 09 Oct 2023 12:03:48 AM UTC: 
+ sudoku.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:166:31: error: invalid use of incomplete typedef ‘List’
+  166 |         Node* aux = adyacentes->head;
+      |                               ^~
+sudoku.c:169:27: error: ‘Node’ has no member named ‘data’
+  169 |             push(pila, aux->data);
+      |                           ^~
+sudoku.c:170:22: error: ‘Node’ has no member named ‘next’
+  170 |             aux = aux->next;
+      |                      ^~
+Compilation failed
+f7a6693

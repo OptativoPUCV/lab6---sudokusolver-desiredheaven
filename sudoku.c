@@ -144,44 +144,44 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* inicial, int* cont) {
-  Stack* pila = createStack();
-  if (pila == NULL) {
-    return NULL;
-  }
-  *cont = 1;
-  push(pila, inicial);
+    Stack* pila = createStack();
+    if (pila == NULL) {
+        return NULL;
+    }
+    *cont = 1;
+    push(pila, inicial);
 
-  while (get_size(pila) != 0) {
-    Node* nodo = top(pila);
-    pop(pila);
+    while (get_size(pila) != 0) {
+        Node* nodo = top(pila);
+        pop(pila);
 
-    (*cont)--;
+        (*cont)--;
 
-    if (is_final(nodo) == 1) {
-      return nodo;
+        if (is_final(nodo) == 1) {
+            return nodo;
+        }
+
+        List* adyacentes = get_adj_nodes(nodo);
+
+        Node* aux = adyacentes->head;
+
+        while (aux != NULL) {
+            push(pila, aux->data);
+            aux = aux->next;
+
+            (*cont)++;
+        }
+
+        free(adyacentes);
     }
 
-    List* adyacentes = get_adj_nodes(nodo);
-    Node* aux = (getFirst(adyacentes));
-
-    while (aux != NULL) {
-      push(pila, aux);
-      aux = (getNext(adyacentes));
-
-      (*cont)++;
+    if (*cont == 0) {
+        return NULL;
     }
 
-    free(nodo);
-  }
-
-  if (*cont == 0) {
+    free(inicial);
     return NULL;
-  }
-
-  free(inicial);
-  return NULL;
 }
-
 
 
 
