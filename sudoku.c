@@ -163,11 +163,11 @@ Node* DFS(Node* initial, int* cont){
 
     List* Adyacente = get_adj_nodes(nodo);
 
-    Node* aux = Adyacente->head;
+    Node* aux = first(Adyacente);
 
     while(aux != NULL){
       push(stack, aux);
-      aux = aux->next;
+      aux = next(Adyacente);
 
       (*cont)++;
       (*cont)++;
