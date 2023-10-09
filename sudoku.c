@@ -143,57 +143,46 @@ int is_final(Node* n){
   return 1;
 }
 
-Node* DFS(Node* inicial, int* cont) {
-    Stack* pila = createStack();
-    if (pila == NULL) {
-        return NULL;
-    }
-    *cont = 1;
-    push(pila, inicial);
-
-    while (get_size(pila) != 0) {
-        Node* nodo = top(pila);
-        pop(pila);
-
-        (*cont)--;
-
-        if (is_final(nodo) == 1) {
-            return nodo;
-        }
-
-        int i, j;
-        int encontrado = 0;
-
-        for (i = 0; i < 9 && !encontrado; i++) {
-            for (j = 0; j < 9 && !encontrado; j++) {
-                if (nodo->sudo[i][j] == 0) {
-                    encontrado = 1;
-                    break;
-                }
-            }
-        }
-
-        if (encontrado) {
-            for (int k = 1; k <= 9; k++) {
-                nodo->sudo[i][j] = k;
-
-                if (is_valid(nodo)) {
-                    Node* aux = copy(nodo);
-                    push(pila, aux);
-                    (*cont)++;
-                }
-            }
-            nodo->sudo[i][j] = 0;
-        }
-    }
-
-    if (*cont == 0) {
-        return NULL;
-    }
-
-    free(inicial);
+Node* DFS(Node* initial, int* cont){
+  Stack* stack = createStack();
+  if(stack == NULL){
     return NULL;
+  }
+  *cont = 1;
+  push(stack, initial);
+
+  while(get_size(stack) != 0){
+    Node* nodo = top(stack);
+    pop(stack);
+
+    (*cont)--;
+
+    if(is_final(nodo) == 1){
+      return nodo;
+    }
+
+    List* Adyacente = get_adj_nodes(nodo);
+
+    Node* aux = Adyacente->head;
+
+    while(aux != NULL){
+      push(stack, aux);
+      aux = aux->next;
+
+      (*cont)++;
+      (*cont)++;
+    }
+    (*cont)++;
+    free(nodo);
+  }
+
+  if(*cont == 0) {
+    return NULL;
+  }
+  free(initial);
+  return NULL;
 }
+
 
 
 

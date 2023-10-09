@@ -772,3 +772,16 @@ Mon 09 Oct 2023 12:05:39 AM UTC:
  1 file changed, 19 insertions(+), 7 deletions(-)
  tests:  0|0
 6f7f7ad
+Mon 09 Oct 2023 12:08:14 AM UTC: 
+ sudoku.c | 44 ++++++++++++++++----------------------------
+ 1 file changed, 16 insertions(+), 28 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:166:26: error: invalid use of incomplete typedef ‘List’
+  166 |     Node* aux = Adyacente->head;
+      |                          ^~
+sudoku.c:170:16: error: ‘Node’ has no member named ‘next’
+  170 |       aux = aux->next;
+      |                ^~
+Compilation failed
+65a4c64
