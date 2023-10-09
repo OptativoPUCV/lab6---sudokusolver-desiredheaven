@@ -731,3 +731,23 @@ sudoku.c:169:11: error: assignment to ‘Node *’ from ‘int’ makes pointer 
 cc1: all warnings being treated as errors
 Compilation failed
 2ac539f
+Mon 09 Oct 2023 12:01:42 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:165:18: error: implicit declaration of function ‘getFirst’ [-Werror=implicit-function-declaration]
+  165 |     Node* aux = (getFirst(adyacentes));
+      |                  ^~~~~~~~
+sudoku.c:165:17: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  165 |     Node* aux = (getFirst(adyacentes));
+      |                 ^
+sudoku.c:169:14: error: implicit declaration of function ‘getNext’ [-Werror=implicit-function-declaration]
+  169 |       aux = (getNext(adyacentes));
+      |              ^~~~~~~
+sudoku.c:169:11: error: assignment to ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  169 |       aux = (getNext(adyacentes));
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+e77c4ec
