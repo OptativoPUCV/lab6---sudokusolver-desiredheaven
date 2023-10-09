@@ -767,3 +767,8 @@ sudoku.c:170:22: error: ‘Node’ has no member named ‘next’
       |                      ^~
 Compilation failed
 f7a6693
+Mon 09 Oct 2023 12:05:39 AM UTC: 
+ sudoku.c | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
+ tests:  0|0
+6f7f7ad

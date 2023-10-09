@@ -161,18 +161,30 @@ Node* DFS(Node* inicial, int* cont) {
             return nodo;
         }
 
-        List* adyacentes = get_adj_nodes(nodo);
+        int i, j;
+        int encontrado = 0;
 
-        Node* aux = adyacentes->head;
-
-        while (aux != NULL) {
-            push(pila, aux->data);
-            aux = aux->next;
-
-            (*cont)++;
+        for (i = 0; i < 9 && !encontrado; i++) {
+            for (j = 0; j < 9 && !encontrado; j++) {
+                if (nodo->sudo[i][j] == 0) {
+                    encontrado = 1;
+                    break;
+                }
+            }
         }
 
-        free(adyacentes);
+        if (encontrado) {
+            for (int k = 1; k <= 9; k++) {
+                nodo->sudo[i][j] = k;
+
+                if (is_valid(nodo)) {
+                    Node* aux = copy(nodo);
+                    push(pila, aux);
+                    (*cont)++;
+                }
+            }
+            nodo->sudo[i][j] = 0;
+        }
     }
 
     if (*cont == 0) {
@@ -182,7 +194,6 @@ Node* DFS(Node* inicial, int* cont) {
     free(inicial);
     return NULL;
 }
-
 
 
 
